@@ -16,6 +16,7 @@ var app_component_1 = require('./app.component');
 var home_component_1 = require('./components/home.component');
 var contacto_component_1 = require('./components/contacto.component');
 var productos_component_1 = require('./components/productos.component');
+var productos_service_1 = require('./services/productos.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,6 +24,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing],
             declarations: [app_component_1.AppComponent, contacto_component_1.ContactoComponent, productos_component_1.ProductosComponent, home_component_1.HomeComponent],
+            providers: [productos_service_1.ProductosService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

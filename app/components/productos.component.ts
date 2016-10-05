@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { Producto } from '../models/productos.model';
+import { Component } from '@angular/core'
+
+import { Producto } from '../models/productos.model'
+import { ProductosService } from '../services/productos.service'
 
 @Component({
   selector: 'productos',
@@ -8,9 +10,10 @@ import { Producto } from '../models/productos.model';
 
 export class ProductosComponent {
   public producto:Producto
+  public productos:Array<Producto>
   
-  constructor(){
-    this.producto = new Producto(1, 'Crema Facial', './carpeta/crema.jpg')
+  constructor(private _productosService: ProductosService){
+    this.productos = this._productosService.getProductos()
   }
-  
+
 }

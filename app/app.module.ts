@@ -8,10 +8,12 @@ import { HomeComponent }       from './components/home.component';
 import { ContactoComponent }  from './components/contacto.component';
 import { ProductosComponent }  from './components/productos.component';
 
+import { ProductosService } from './services/productos.service'
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, routing ],
   declarations: [ AppComponent, ContactoComponent, ProductosComponent, HomeComponent ],
+  providers:    [ ProductosService ],
   bootstrap:    [ AppComponent ]
 })
 

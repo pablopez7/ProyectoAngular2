@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var productos_model_1 = require('../models/productos.model');
+var productos_service_1 = require('../services/productos.service');
 var ProductosComponent = (function () {
-    function ProductosComponent() {
-        this.producto = new productos_model_1.Producto(1, 'Crema Facial', './carpeta/crema.jpg');
+    function ProductosComponent(_productosService) {
+        this._productosService = _productosService;
+        this.productos = this._productosService.getProductos();
     }
     ProductosComponent = __decorate([
         core_1.Component({
             selector: 'productos',
             templateUrl: '/app/views/productos.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [productos_service_1.ProductosService])
     ], ProductosComponent);
     return ProductosComponent;
 }());

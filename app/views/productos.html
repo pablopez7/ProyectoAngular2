@@ -1,7 +1,11 @@
 <h1>Productos</h1>
 <p>Listado de productos</p>
 <ul>
-    <li>ID: <strong>{{producto.id}}</strong></li>
-    <li>Nombre: <strong>{{producto.nombre}}</strong></li>
-    <li>Directorio: <strong>{{producto.directorio}}</strong></li>
+    <ul *ngFor="let producto of productos" style="margin-bottom: 10px;">
+        <li>ID: <strong>{{producto.id}}</strong></li>
+        <li>Nombre: <strong>{{producto.nombre}}</strong></li>
+        <li>Directorio: <strong>{{producto.directorio}}</strong></li>
+        <li *ngIf="producto.descripcion">Descripcion: <strong>{{producto.descripcion}}</strong></li>
+        <li>Estatus: <strong>{{producto.estatus}}</strong></li>
+    </ul>
 </ul>
