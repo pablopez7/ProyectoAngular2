@@ -14,5 +14,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  titulo = 'Mi primer pagina en Angular 2'
+  titulo = 'Mi primer pagína en Angular 2'
 }

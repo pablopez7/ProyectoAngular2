@@ -14,6 +14,7 @@ var ProductosComponent = (function () {
     function ProductosComponent(_productosService) {
         this._productosService = _productosService;
         this.productos = this._productosService.getProductos();
+        console.log(this.productos);
     }
     ProductosComponent = __decorate([
         core_1.Component({

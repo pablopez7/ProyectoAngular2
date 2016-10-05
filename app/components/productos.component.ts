@@ -14,6 +14,7 @@ export class ProductosComponent {
   
   constructor(private _productosService: ProductosService){
     this.productos = this._productosService.getProductos()
+    console.log(this.productos)
   }
 
 }
