@@ -9,13 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var productos_model_1 = require('../models/productos.model');
 var ProductosComponent = (function () {
     function ProductosComponent() {
+        this.producto = new productos_model_1.Producto(1, 'Crema Facial', './carpeta/crema.jpg');
     }
     ProductosComponent = __decorate([
         core_1.Component({
             selector: 'productos',
-            template: "<h2>Productos</h2>\n  <p>Esta es una pagina de Productos</p>\n  "
+            templateUrl: '/app/views/productos.html'
         }), 
         __metadata('design:paramtypes', [])
     ], ProductosComponent);

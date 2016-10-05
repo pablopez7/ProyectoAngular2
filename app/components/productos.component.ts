@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { Producto } from '../models/productos.model';
 
 @Component({
   selector: 'productos',
-  template: `<h2>Productos</h2>
-  <p>Esta es una pagina de Productos</p>
-  `
+  templateUrl: '/app/views/productos.html'
 })
 
-export class ProductosComponent { }
+export class ProductosComponent {
+  public producto:Producto
+  
+  constructor(){
+    this.producto = new Producto(1, 'Crema Facial', './carpeta/crema.jpg')
+  }
+  
+}
