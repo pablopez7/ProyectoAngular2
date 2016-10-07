@@ -14,8 +14,9 @@ var forms_1 = require('@angular/forms');
 var app_routing_1 = require('./app.routing');
 var app_component_1 = require('./app.component');
 var home_component_1 = require('./components/home.component');
-var contacto_component_1 = require('./components/contacto.component');
 var productos_component_1 = require('./components/productos.component');
+var crear_producto_component_1 = require('./components/crear-producto.component');
+var contacto_component_1 = require('./components/contacto.component');
 var productos_service_1 = require('./services/productos.service');
 var AppModule = (function () {
     function AppModule() {
@@ -23,7 +24,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing],
-            declarations: [app_component_1.AppComponent, contacto_component_1.ContactoComponent, productos_component_1.ProductosComponent, home_component_1.HomeComponent],
+            declarations: [app_component_1.AppComponent, contacto_component_1.ContactoComponent, productos_component_1.ProductosComponent, home_component_1.HomeComponent, crear_producto_component_1.CrearProductoComponent],
             providers: [productos_service_1.ProductosService],
             bootstrap: [app_component_1.AppComponent]
         }), 

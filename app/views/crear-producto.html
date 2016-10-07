@@ -1,0 +1,11 @@
+<h1>Crear Nuevo Producto</h1>
+
+<p>Id:</p>
+<input type="text" #id>
+<p>Nombre: </p>
+<input type="text" #nombre>
+<p>Directorio: </p>
+<input type="text" #directorio>
+<p>Descripcion: </p>
+<input type="text" #descripcion>
+<input type="submit" value="Crear Producto" (click)="onCrearProducto(id.value, nombre.value, directorio.value, descripcion.value)">

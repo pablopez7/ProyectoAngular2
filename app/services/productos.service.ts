@@ -5,7 +5,12 @@ import { PRODUCTOS } from './mock-productos';
 
 @Injectable()
 export class ProductosService {
+
     getProductos(): Producto[] {
         return PRODUCTOS
+    }
+
+    insertProducto(producto: Producto){
+        Promise.resolve(PRODUCTOS).then((productos: Producto[]) => productos.push(producto))
     }
 }
