@@ -7,5 +7,6 @@
         <li>Directorio: <strong>{{producto.directorio}}</strong></li>
         <li *ngIf="producto.descripcion">Descripcion: <strong>{{producto.descripcion}}</strong></li>
         <li>Estatus: <strong>{{producto.estatus}}</strong></li>
+        <button (click)="gotoDetail(producto)">Editar</button>
     </ul>
 </ul>

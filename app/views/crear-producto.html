@@ -9,3 +9,12 @@
 <p>Descripcion: </p>
 <input type="text" #descripcion>
 <input type="submit" value="Crear Producto" (click)="onCrearProducto(id.value, nombre.value, directorio.value, descripcion.value)">
+
+
+<h1>Recibe parametros GET desde la URL</h1>
+<p><strong>Nota: </strong>No pasa los parametros nuevos por que los trae solo si ya estan en la base de datos.</p>
+<div *ngIf="producto">
+  <h2>{{producto.nombre}}</h2>
+  <div>
+    <label>id: </label>{{producto.id}}</div>
+</div>

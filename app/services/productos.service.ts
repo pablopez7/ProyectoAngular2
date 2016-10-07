@@ -10,7 +10,17 @@ export class ProductosService {
         return PRODUCTOS
     }
 
-    insertProducto(producto: Producto){
+    insertProducto(producto: Producto) {
         Promise.resolve(PRODUCTOS).then((productos: Producto[]) => productos.push(producto))
     }
+
+    getProduct(): Promise<Producto[]> {
+        return Promise.resolve(PRODUCTOS);
+    }
+
+    getProducto(id: number): Promise<Producto> {
+        return this.getProduct()
+            .then(producto => producto.find(Producto => Producto.id === id));
+    }
+
 }

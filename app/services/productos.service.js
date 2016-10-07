@@ -19,6 +19,13 @@ var ProductosService = (function () {
     ProductosService.prototype.insertProducto = function (producto) {
         Promise.resolve(mock_productos_1.PRODUCTOS).then(function (productos) { return productos.push(producto); });
     };
+    ProductosService.prototype.getProduct = function () {
+        return Promise.resolve(mock_productos_1.PRODUCTOS);
+    };
+    ProductosService.prototype.getProducto = function (id) {
+        return this.getProduct()
+            .then(function (producto) { return producto.find(function (Producto) { return Producto.id === id; }); });
+    };
     ProductosService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

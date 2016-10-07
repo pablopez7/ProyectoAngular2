@@ -9,6 +9,7 @@ var appRoutes = [
     { path: 'index', component: home_component_1.HomeComponent },
     { path: 'productos', component: productos_component_1.ProductosComponent },
     { path: 'crear-producto', component: crear_producto_component_1.CrearProductoComponent },
+    { path: 'crear-producto/:id', component: crear_producto_component_1.CrearProductoComponent },
     { path: 'contacto', component: contacto_component_1.ContactoComponent }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
