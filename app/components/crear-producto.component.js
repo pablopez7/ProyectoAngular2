@@ -9,22 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var productos_model_1 = require('../models/productos.model');
 var productos_service_1 = require('../services/productos.service');
 var CrearProductoComponent = (function () {
-    function CrearProductoComponent(_productosService) {
+    function CrearProductoComponent(_productosService, _router) {
         this._productosService = _productosService;
+        this._router = _router;
     }
     CrearProductoComponent.prototype.onCrearProducto = function (id, nombre, directorio, descripcion, estatus) {
         var producto = new productos_model_1.Producto(id, nombre, directorio, descripcion, true);
         this._productosService.insertProducto(producto);
+        this._router.navigate(["productos"]);
     };
     CrearProductoComponent = __decorate([
         core_1.Component({
             selector: 'crear-producto',
             templateUrl: '/app/views/crear-producto.html'
         }), 
-        __metadata('design:paramtypes', [productos_service_1.ProductosService])
+        __metadata('design:paramtypes', [productos_service_1.ProductosService, router_1.Router])
     ], CrearProductoComponent);
     return CrearProductoComponent;
 }());
