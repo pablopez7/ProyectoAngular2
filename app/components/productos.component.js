@@ -21,7 +21,7 @@ var ProductosComponent = (function () {
         this._productosService.getProduct();
     };
     ProductosComponent.prototype.gotoDetail = function (producto) {
-        var link = ['/crear-producto', producto.id];
+        var link = ['/detalle-producto', producto.id];
         this._router.navigate(link);
     };
     ProductosComponent = __decorate([

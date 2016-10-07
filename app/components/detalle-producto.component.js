@@ -10,27 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var productos_model_1 = require('../models/productos.model');
 var productos_service_1 = require('../services/productos.service');
-var CrearProductoComponent = (function () {
-    function CrearProductoComponent(_productosService, _router) {
+var DetalleProductoComponent = (function () {
+    function DetalleProductoComponent(_productosService, _route) {
         this._productosService = _productosService;
-        this._router = _router;
+        this._route = _route;
     }
-    CrearProductoComponent.prototype.onCrearProducto = function (id, nombre, directorio, descripcion, estatus) {
-        var producto = new productos_model_1.Producto(id, nombre, directorio, descripcion, true);
-        this._productosService.insertProducto(producto);
-        this._router.navigate(["productos"]);
+    DetalleProductoComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._route.params.forEach(function (params) {
+            var id = +params['id'];
+            _this._productosService.getProducto(id)
+                .then(function (producto) { return _this.producto = producto; });
+        });
     };
-    CrearProductoComponent = __decorate([
+    DetalleProductoComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'crear-producto',
-            templateUrl: '/app/views/crear-producto.html'
+            selector: 'detalle-producto',
+            templateUrl: '/app/views/detalle-producto.html'
         }), 
-        __metadata('design:paramtypes', [productos_service_1.ProductosService, router_1.Router])
-    ], CrearProductoComponent);
-    return CrearProductoComponent;
+        __metadata('design:paramtypes', [productos_service_1.ProductosService, router_1.ActivatedRoute])
+    ], DetalleProductoComponent);
+    return DetalleProductoComponent;
 }());
-exports.CrearProductoComponent = CrearProductoComponent;
-//# sourceMappingURL=crear-producto.component.js.map
+exports.DetalleProductoComponent = DetalleProductoComponent;
+//# sourceMappingURL=detalle-producto.component.js.map

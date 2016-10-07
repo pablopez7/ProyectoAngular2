@@ -1,0 +1,22 @@
+<div *ngIf="producto">
+    <h2><strong>Detalles de: </strong>{{producto.nombre}}!</h2>
+    <div>
+        <label><strong>id: </strong>{{producto.id}}</label><br>
+        <label><strong>Nombre:  </strong>{{producto.nombre}}</label><br>
+        <label><strong>Directorio: </strong>{{producto.directorio}}</label><br>
+        <label><strong>Descripcion: </strong>{{producto.descripcion}}</label><br>
+        <label><strong>Estatus: </strong>{{producto.estatus}}</label>
+    </div>
+    <h2><strong>Editar Producto</strong></h2>
+    <div>
+        <label><strong>id: </strong>{{producto.id}}</label><br>
+        <label><strong>Nombre:  </strong></label>
+        <input [(ngModel)]="producto.nombre" placeholder="nombre" /><br>
+        <label><strong>Directorio: </strong></label>
+        <input [(ngModel)]="producto.directorio" placeholder="directorio" /><br>
+        <label><strong>Descripcion: </strong></label>
+        <input [(ngModel)]="producto.descripcion" placeholder="descripcion" /><br>
+        <label><strong>Estatus: </strong></label>
+        <input [(ngModel)]="producto.estatus" placeholder="estatus" /><br>
+    </div>
+</div>

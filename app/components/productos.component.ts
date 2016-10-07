@@ -26,7 +26,7 @@ export class ProductosComponent implements OnInit {
   }
 
   gotoDetail(producto: Producto): void {
-    let link = ['/crear-producto', producto.id];
+    let link = ['/detalle-producto', producto.id];
     this._router.navigate(link);
   }
 

@@ -7,13 +7,14 @@ import { AppComponent }       from './app.component';
 import { HomeComponent }       from './components/home.component';
 import { ProductosComponent }  from './components/productos.component';
 import { CrearProductoComponent }  from './components/crear-producto.component';
+import { DetalleProductoComponent }  from './components/detalle-producto.component';
 import { ContactoComponent }  from './components/contacto.component';
 
 import { ProductosService } from './services/productos.service'
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, routing ],
-  declarations: [ AppComponent, ContactoComponent, ProductosComponent, HomeComponent, CrearProductoComponent ],
+  declarations: [ AppComponent, HomeComponent, ProductosComponent, DetalleProductoComponent, CrearProductoComponent, ContactoComponent ],
   providers:    [ ProductosService ],
   bootstrap:    [ AppComponent ]
 })
