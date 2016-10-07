@@ -1,4 +1,5 @@
 "use strict";
+require('./rxjs-extensions');
 var router_1 = require('@angular/router');
 var home_component_1 = require('./components/home.component');
 var productos_component_1 = require('./components/productos.component');
