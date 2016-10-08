@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute, Params } from '@angular/router'
+import { Router, ActivatedRoute, Params } from '@angular/router'
 
 import { Producto } from '../models/productos.model'
 import { ProductosService } from '../services/productos.service'
@@ -15,7 +15,8 @@ export class DetalleProductoComponent implements OnInit {
 
   constructor(
     private _productosService: ProductosService,
-    private _route: ActivatedRoute) { }
+    private _route: ActivatedRoute,
+    private _router: Router) { }
 
   ngOnInit(): void {
     this._route.params.forEach((params: Params) => {
@@ -24,4 +25,9 @@ export class DetalleProductoComponent implements OnInit {
         .then(producto => this.producto = producto)
     })
   }
+
+
+    volver(){
+        this._router.navigate(['/productos']);
+    }
 }

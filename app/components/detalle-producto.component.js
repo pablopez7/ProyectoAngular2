@@ -12,9 +12,10 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var productos_service_1 = require('../services/productos.service');
 var DetalleProductoComponent = (function () {
-    function DetalleProductoComponent(_productosService, _route) {
+    function DetalleProductoComponent(_productosService, _route, _router) {
         this._productosService = _productosService;
         this._route = _route;
+        this._router = _router;
     }
     DetalleProductoComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -24,13 +25,16 @@ var DetalleProductoComponent = (function () {
                 .then(function (producto) { return _this.producto = producto; });
         });
     };
+    DetalleProductoComponent.prototype.volver = function () {
+        this._router.navigate(['/productos']);
+    };
     DetalleProductoComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'detalle-producto',
             templateUrl: '/app/views/detalle-producto.html'
         }), 
-        __metadata('design:paramtypes', [productos_service_1.ProductosService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [productos_service_1.ProductosService, router_1.ActivatedRoute, router_1.Router])
     ], DetalleProductoComponent);
     return DetalleProductoComponent;
 }());
